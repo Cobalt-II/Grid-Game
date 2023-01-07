@@ -5,4 +5,4 @@ In order to run, simply download the files and install express by ```npm install
 [video (1).webm](https://user-images.githubusercontent.com/97923189/211167081-09a0d675-0c8c-4289-ba62-d55129e0fa6a.webm)
 Here is a clip of a run of Grid Game I played.
 
-Enemies do not start off this strong or fast, they become stronger as the player survives for a longer amount of time.
+Enemies do not start off this strong or fast, they become stronger as the player survives for a longer amount of time. As enemies become stronger they become worth more score. The goal is to survive while gaining the most score as possible.
