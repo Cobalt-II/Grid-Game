@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Grid Game</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <p style="font-size: 30px">Grid Game (shitty menu ik but idc about menu design)</p>
+    <button id = "f">play survival</button>
+    <button id = "l">settings</button>
+  <script>
+document.getElementById('f').onclick = function() {
+    location.href = "/html/game.html";
+};
+
+document.getElementById('l').onclick = function() {
+    location.href = '/html/settings.html';
+};
+
+if (!localStorage.roomColors) {
+localStorage.roomColors = ['#B25A27', '#B8430F', '#00b0e1', '#32CD32', '#FEF352', '#000000', '#FF0000', '#01796f'];
+};
+  </script>
+  </body>
+</html>
+
