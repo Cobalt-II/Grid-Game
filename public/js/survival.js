@@ -36,7 +36,7 @@ requestAnimationFrame(function boost() {
             pushNote(`Weapon stat ${u} upgraded by ${survivalData.bonus} point(s)`, 3);
         } else {
             weapondata[u] -= survivalData.timebonus;
-            pushNote(`Weapon stat ${u} decreased by ${survivalData.bonus} second(s)`, 3);
+            pushNote(`Weapon stat ${u} decreased by ${survivalData.timebonus} second(s)`, 3);
         }
     milestonecontroller.push(milestones.length);
     }
