@@ -18,7 +18,7 @@ export function mouse () {if (reload >= weapondata.reload * 1000) {
     reload = 0;
     radius();
     if (attackgrid.length > weapondata.max) {
-        attackgrid.splice(0, 5);
+        attackgrid.splice(0, attackgrid.length - weapondata.max);
     }
 }};
 
