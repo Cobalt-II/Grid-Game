@@ -6,3 +6,5 @@ In order to run, simply download the files and install express by ```npm install
 Here is a clip of a run of Grid Game I played.
 
 Enemies do not start off this strong or fast, they become stronger as the player survives for a longer amount of time. As enemies become stronger they become worth more score. The goal is to survive while gaining the most score as possible.
+
+~~also the menu design is complete shit ik~~
