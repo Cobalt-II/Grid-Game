@@ -5,6 +5,7 @@ let milestones = [];
 let targets = ['speed', 'damage', 'health', 'max', 'spawnrate'];
 let stattargets = ['damage', 'health', 'max'];
 let weaponstats = ['damage', 'reload', 'radius', 'max'];
+let wstattargets = ['damage', 'radius', 'max'];
 let nextMi = 1;
 let milestonecontroller = [];
 
@@ -35,8 +36,14 @@ requestAnimationFrame(function boost() {
             weapondata[u] += survivalData.bonus;
             pushNote(`Weapon stat ${u} upgraded by ${survivalData.bonus} point(s)`, 3);
         } else {
+            if(weapondata[u] > survivalData.timebonus) {
             weapondata[u] -= survivalData.timebonus;
             pushNote(`Weapon stat ${u} decreased by ${survivalData.timebonus} second(s)`, 3);
+            } else {
+            u = wstattargets[Math.floor(Math.random() * wstattargets.length)];
+            weapondata[u] += survivalData.bonus;
+            pushNote(`Weapon stat ${u} upgraded by ${survivalData.bonus} point(s)`, 3);
+            }
         }
     milestonecontroller.push(milestones.length);
     }
