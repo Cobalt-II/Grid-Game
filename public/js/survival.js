@@ -4,8 +4,8 @@ import {pushNote} from "/js/notifications.js";
 let milestones = [];
 let targets = ['speed', 'damage', 'health', 'max', 'spawnrate'];
 let stattargets = ['damage', 'health', 'max'];
-let weaponstats = ['damage', 'reload', 'radius', 'max'];
-let wstattargets = ['damage', 'radius', 'max'];
+let weaponstats = ['damage', 'reload', 'max'];
+let wstattargets = ['damage', 'max'];
 let nextMi = 1;
 let milestonecontroller = [];
 
