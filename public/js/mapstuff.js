@@ -130,6 +130,12 @@ case 3:
         }
     };
 break;
-}
+case 4:
+    for(let count = 0; count < jw.grid.length; count++) {
+    let l = Math.floor(Math.random() * room.condense);
+    jw.branch(l, count, 100, 1, 100 - l);
+    };
+break;
+};
 
 export default jw;
