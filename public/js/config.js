@@ -14,7 +14,7 @@ offset: 150
 export let room = {
 x: 100,
 y: 100,
-type: Math.ceil(Math.random() * 3)
+type: Math.ceil(Math.random() * 4)
 };
 
 export let boostData = {
