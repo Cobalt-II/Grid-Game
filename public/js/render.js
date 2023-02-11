@@ -40,6 +40,7 @@ requestAnimationFrame(function draw() {
                 if (parseInt(attackgrid[k][0]) === player.x + count && parseInt(attackgrid[k][1]) === player.y + coun) {
                     ctx.fillStyle = localStorage.roomColors.split(',')[4];
                     ctx.fillRect(window.innerWidth * (count - -player.fov) / (player.fov * 2), window.innerHeight * (coun - -player.fov) / (player.fov * 2), gridX, gridY);
+                    ctx.fillStyle = localStorage.roomColors.split(',')[1];
                 }
             }
             let targ = player.x + count;
@@ -60,12 +61,14 @@ requestAnimationFrame(function draw() {
                 if (powerups[t].pos[0] === player.x + count && powerups[t].pos[1] === player.y + coun) {
                     ctx.fillStyle = localStorage.roomColors.split(',')[3];
                     ctx.fillRect(window.innerWidth * (count - -player.fov) / (player.fov * 2), window.innerHeight * (coun - -player.fov) / (player.fov * 2), gridX, gridY);
+                    ctx.fillStyle = localStorage.roomColors.split(',')[1];
                 }
             }
             for (let t in enemies) {
                 if (enemies[t].pos[0] === player.x + count && enemies[t].pos[1] === player.y + coun) {
                     ctx.fillStyle = localStorage.roomColors.split(',')[6];
                     ctx.fillRect(window.innerWidth * (count - -player.fov) / (player.fov * 2), window.innerHeight * (coun - -player.fov) / (player.fov * 2), gridX, gridY);
+                    ctx.fillStyle = localStorage.roomColors.split(',')[1];
                 }
             }
         }
