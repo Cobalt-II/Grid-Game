@@ -2,6 +2,7 @@ import {enemyData, player} from '/js/config.js';
 import {getPos} from '/js/powerups.js';
 
 export let enemies = [];
+let spawnDate = Date.now();
 
 class enemy {
     constructor(pos, health, speed, score, id, type) {
@@ -15,13 +16,6 @@ class enemy {
     }
 };
 
-setInterval(() => {
-    if (enemies.length < enemyData.max) {
-        let j = getPos(0, enemyData.spawn);
-        enemies.push(new enemy([j[0], j[1]], enemyData.health, enemyData.speed, enemyData.score, id, enemyData.types[Math.floor(Math.random() * enemyData.types.length)]));
-    }
-}, enemyData.spawnrate * 1000);
-
 export function checkPos(pos, k) {
     for (let c in k) {
         if (pos[0] === k[c].pos[0] && pos[1] === k[c].pos[1]) {
@@ -32,8 +26,14 @@ export function checkPos(pos, k) {
 }
 
 requestAnimationFrame(function move() {
+            if (enemies.length < enemyData.max && Date.now() - spawnDate > enemyData.spawnrate * 1000) {
+                let j = getPos(0, enemyData.spawn);
+                enemies.push(new enemy([j[0], j[1]], enemyData.health, enemyData.speed, enemyData.score, id, enemyData.types[Math.floor(Math.random() * enemyData.types.length)]));
+                spawnDate = Date.now();
+            }
+
             for (let count in enemies) {
-                if (enemies[count].date - Date.now() > enemies[count].speed * 1000) {
+                if (Date.now() - enemies[count].date > enemies[count].speed * 1000) {
                     switch (enemies[count].type) {
                         case 'base':
                             if (enemies[coun].pos[0] < player.x && !checkPos([enemies[coun].pos[0] + 1, enemies[coun].pos[1]], enemies)) {
@@ -50,6 +50,7 @@ requestAnimationFrame(function move() {
                             };
                             break;
                     }
+                    enemies[count].date = Date.now();
                 }
                 requestAnimationFrame(move);
             });
