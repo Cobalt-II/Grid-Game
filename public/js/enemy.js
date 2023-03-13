@@ -26,32 +26,33 @@ export function checkPos(pos, k) {
 }
 
 requestAnimationFrame(function move() {
-            if (enemies.length < enemyData.max && Date.now() - spawnDate > enemyData.spawnrate * 1000) {
-                let j = getPos(0, enemyData.spawn);
-                enemies.push(new enemy([j[0], j[1]], enemyData.health, enemyData.speed, enemyData.score, id, enemyData.types[Math.floor(Math.random() * enemyData.types.length)]));
-                spawnDate = Date.now();
-            }
+    if (enemies.length < enemyData.max && Date.now() - spawnDate > enemyData.spawnrate * 1000) {
+        let j = getPos(0, enemyData.spawn);
+        enemies.push(new enemy([j[0], j[1]], enemyData.health, enemyData.speed, enemyData.score, id, enemyData.types[Math.floor(Math.random() * enemyData.types.length)]));
+        spawnDate = Date.now();
+    }
 
-            for (let count in enemies) {
-                if (Date.now() - enemies[count].date > enemies[count].speed * 1000) {
-                    switch (enemies[count].type) {
-                        case 'base':
-                            if (enemies[coun].pos[0] < player.x && !checkPos([enemies[coun].pos[0] + 1, enemies[coun].pos[1]], enemies)) {
-                                enemies[coun].pos[0]++
-                            };
-                            if (enemies[coun].pos[0] > player.x && !checkPos([enemies[coun].pos[0] - 1, enemies[coun].pos[1]], enemies)) {
-                                enemies[coun].pos[0]--
-                            };
-                            if (enemies[coun].pos[1] < player.y && !checkPos([enemies[coun].pos[0], enemies[coun].pos[1] + 1], enemies)) {
-                                enemies[coun].pos[1]++
-                            };
-                            if (enemies[coun].pos[1] > player.y && !checkPos([enemies[coun].pos[0], enemies[coun].pos[1] - 1], enemies)) {
-                                enemies[coun].pos[1]--
-                            };
-                            break;
-                    }
-                    enemies[count].date = Date.now();
-                }
-                requestAnimationFrame(move);
-            });
+    for (let count in enemies) {
+        if (Date.now() - enemies[count].date > enemies[count].speed * 1000) {
+            switch (enemies[count].type) {
+                case 'base':
+                    if (enemies[coun].pos[0] < player.x && !checkPos([enemies[coun].pos[0] + 1, enemies[coun].pos[1]], enemies)) {
+                        enemies[coun].pos[0]++
+                    };
+                    if (enemies[coun].pos[0] > player.x && !checkPos([enemies[coun].pos[0] - 1, enemies[coun].pos[1]], enemies)) {
+                        enemies[coun].pos[0]--
+                    };
+                    if (enemies[coun].pos[1] < player.y && !checkPos([enemies[coun].pos[0], enemies[coun].pos[1] + 1], enemies)) {
+                        enemies[coun].pos[1]++
+                    };
+                    if (enemies[coun].pos[1] > player.y && !checkPos([enemies[coun].pos[0], enemies[coun].pos[1] - 1], enemies)) {
+                        enemies[coun].pos[1]--
+                    };
+                    break;
+            }
+            enemies[count].date = Date.now();
+        }
+    }
+    requestAnimationFrame(move);
+});
 
