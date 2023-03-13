@@ -35,17 +35,17 @@ requestAnimationFrame(function move() {
         if (Date.now() - enemies[count].date > enemies[count].speed * 1000) {
             switch (enemies[count].type) {
                 case 'base':
-                    if (enemies[coun].pos[0] < player.x && !checkPos([enemies[coun].pos[0] + 1, enemies[coun].pos[1]], enemies)) {
-                        enemies[coun].pos[0]++
+                    if (enemies[count].pos[0] < player.x && !checkPos([enemies[count].pos[0] + 1, enemies[count].pos[1]], enemies)) {
+                        enemies[count].pos[0]++
                     };
-                    if (enemies[coun].pos[0] > player.x && !checkPos([enemies[coun].pos[0] - 1, enemies[coun].pos[1]], enemies)) {
-                        enemies[coun].pos[0]--
+                    if (enemies[count].pos[0] > player.x && !checkPos([enemies[count].pos[0] - 1, enemies[count].pos[1]], enemies)) {
+                        enemies[count].pos[0]--
                     };
-                    if (enemies[coun].pos[1] < player.y && !checkPos([enemies[coun].pos[0], enemies[coun].pos[1] + 1], enemies)) {
-                        enemies[coun].pos[1]++
+                    if (enemies[count].pos[1] < player.y && !checkPos([enemies[count].pos[0], enemies[count].pos[1] + 1], enemies)) {
+                        enemies[count].pos[1]++
                     };
-                    if (enemies[coun].pos[1] > player.y && !checkPos([enemies[coun].pos[0], enemies[coun].pos[1] - 1], enemies)) {
-                        enemies[coun].pos[1]--
+                    if (enemies[count].pos[1] > player.y && !checkPos([enemies[count].pos[0], enemies[count].pos[1] - 1], enemies)) {
+                        enemies[count].pos[1]--
                     };
                     break;
             }
