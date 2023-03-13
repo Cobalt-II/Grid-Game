@@ -12,8 +12,7 @@ offset: 150
 };
 
 export let room = {
-x: 100,
-y: 100,
+size: 100,
 type: Math.ceil(Math.random() * 5),
 condense: 50
 };
