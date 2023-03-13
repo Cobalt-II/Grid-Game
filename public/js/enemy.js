@@ -5,12 +5,11 @@ export let enemies = [];
 let spawnDate = Date.now();
 
 class enemy {
-    constructor(pos, health, speed, score, id, type) {
+    constructor(pos, health, speed, score, type) {
         this.pos = pos;
         this.health = health;
         this.speed = speed;
         this.score = score;
-        this.id = id;
         this.type = type;
         this.date = Date.now();
     }
@@ -28,7 +27,7 @@ export function checkPos(pos, k) {
 requestAnimationFrame(function move() {
     if (enemies.length < enemyData.max && Date.now() - spawnDate > enemyData.spawnrate * 1000) {
         let j = getPos(0, enemyData.spawn);
-        enemies.push(new enemy([j[0], j[1]], enemyData.health, enemyData.speed, enemyData.score, id, enemyData.types[Math.floor(Math.random() * enemyData.types.length)]));
+        enemies.push(new enemy([j[0], j[1]], enemyData.health, enemyData.speed, enemyData.score, enemyData.types[Math.floor(Math.random() * enemyData.types.length)]));
         spawnDate = Date.now();
     }
 
