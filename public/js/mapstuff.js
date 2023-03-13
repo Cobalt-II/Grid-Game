@@ -165,8 +165,17 @@ switch (room.type) {
     }
     for (let count = 0; count < jw.grid.length; count++) {
       for (let coun = 0; coun < jw.grid.length; coun++) {
+        let counter = 0;
+        let pick = Math.floor(
+          Math.random() * Math.floor(jw.grid[0].length / 14)
+        );
         if (count % 12 === 0 && coun % 14 === 0) {
-          jw.radius(count, coun, Math.floor(Math.random() * 3) + 5, "fill");
+          if (pick !== counter) {
+            jw.radius(count, coun, Math.floor(Math.random() * 3) + 5, "fill");
+          } else {
+            jw.radius(count, coun, 5, "fill");
+          }
+          counter++;
         }
       }
     }
