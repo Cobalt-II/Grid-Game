@@ -169,7 +169,7 @@ switch (room.type) {
         let pick = Math.floor(
           Math.random() * Math.floor(jw.grid[0].length / 14)
         );
-        if (!(count % 12) && !(count % 14)) {
+        if (!(count % 12) && !(coun % 14)) {
           if (pick !== counter) {
             jw.radius(count, coun, Math.floor(Math.random() * 3) + 5, "fill");
           } else {
